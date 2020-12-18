@@ -1,9 +1,15 @@
 package com.company;
 
+import java.util.List;
 import java.util.Scanner;
 
-import static com.company.Utils.Helper.fillTheBricks;
-import static com.company.Utils.Helper.validateSizeInput;
+import static com.company.Utils.BrickToList.getEvenBricks;
+import static com.company.Utils.BrickToList.getOddBricks;
+import static com.company.Utils.FillTheBrickWall.fillTheBricks;
+import static com.company.Utils.ListToReinforcedWall.putEvenBricks;
+import static com.company.Utils.ListToReinforcedWall.putOddBricks;
+import static com.company.Utils.PrintBrickWall.printBrickWall;
+import static com.company.Utils.ValidateBrickWallSize.validateSizeInput;
 
 
 public class Start {
@@ -20,10 +26,13 @@ public class Start {
 
         int[][] brickWall = fillTheBricks(rows, columns);
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(brickWall[i][j]);
-            }
-        }
+        List<Integer> evenBricks = getEvenBricks(brickWall);
+        List<Integer> oddBricks = getOddBricks(brickWall);
+
+        int[][] brickWallReinforced = new int[rows][columns];
+        putEvenBricks(evenBricks, brickWallReinforced);
+        putOddBricks(oddBricks, brickWallReinforced);
+
+        printBrickWall(rows, columns, brickWallReinforced);
     }
 }
