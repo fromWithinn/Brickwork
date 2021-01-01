@@ -11,7 +11,6 @@ import static com.company.Utils.ListToReinforcedWall.putOddBricks;
 import static com.company.Utils.PrintBrickWall.printBrickWall;
 import static com.company.Utils.ValidateBrickWallSize.validateSizeInput;
 
-
 public class Start {
 
     private static final Scanner in = new Scanner(System.in);

@@ -10,8 +10,10 @@ public class BrickToList {
 
         for (int[] ints : brickWall) {
             for (int current : ints) {
-                if (current % 2 == 0) {
-                    evenBricks.add(current);
+                if (!evenBricks.contains(current)) {
+                    if (current % 2 == 0) {
+                        evenBricks.add(current);
+                    }
                 }
             }
         }
@@ -19,15 +21,17 @@ public class BrickToList {
     }
 
     public static List<Integer> getOddBricks(int[][] brickWall) {
-        List<Integer> evenBricks = new ArrayList<>();
+        List<Integer> oddBricks = new ArrayList<>();
 
         for (int[] ints : brickWall) {
             for (int current : ints) {
-                if (current % 2 != 0) {
-                    evenBricks.add(current);
+                if (!oddBricks.contains(current)) {
+                    if (current % 2 != 0) {
+                        oddBricks.add(current);
+                    }
                 }
             }
         }
-        return evenBricks;
+        return oddBricks;
     }
 }
