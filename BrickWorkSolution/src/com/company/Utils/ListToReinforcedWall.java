@@ -8,12 +8,17 @@ public class ListToReinforcedWall {
     public static int[][] putEvenBricks(List<Integer> evenBricks, int[][] brickWall) {
         int index = 0;
         for (int i = 0; i < brickWall.length; i++) {
+            int resetIndex = index;
+            index = 0;
+            if (i > 1) {
+                index += 2;
+            }
             for (int j = 0; j < brickWall[i].length; j += 3) {
                 int squareBrick = evenBricks.get(index);
                 brickWall[i][j] = squareBrick;
                 index++;
                 if (j >= brickWall[i].length - 1) {
-                    index = 0;
+                    index = resetIndex;
                 }
             }
         }

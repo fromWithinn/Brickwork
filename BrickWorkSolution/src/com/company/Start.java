@@ -23,7 +23,8 @@ public class Start {
         int rows = Integer.parseInt(input[0]);
         int columns = Integer.parseInt(input[1]);
 
-        int[][] brickWall = fillTheBricks(rows, columns);
+        int[][] brickWall = new int[rows][columns];
+        fillTheBricks(brickWall, rows, columns);
 
         List<Integer> evenBricks = getEvenBricks(brickWall);
         List<Integer> oddBricks = getOddBricks(brickWall);

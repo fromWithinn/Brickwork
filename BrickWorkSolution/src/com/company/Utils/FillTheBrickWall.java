@@ -15,8 +15,7 @@ public class FillTheBrickWall {
 
     private static final Scanner in = new Scanner(System.in);
 
-    public static int[][] fillTheBricks(int rows, int columns) {
-        int[][] brickWall = new int[rows][columns];
+    public static int[][] fillTheBricks(int[][] brickWall, int rows, int columns) {
         int validateBrick = 0;
 
         for (int i = 0; i < rows; i++) {
